@@ -5,6 +5,10 @@ using System.Text;
 
 namespace Solid.SingleResponsibility
 {
+    // Disclaimer:  *Not Original* --------------
+    // Source:      Article by Marlon from Thynk Software
+    // More Info:   https://marlongrech.wordpress.com/2008/03/20/more-than-just-mvc-for-wpf/
+
     /// <summary>
     /// Colleague that can register to messages from the Mediator
     /// </summary>

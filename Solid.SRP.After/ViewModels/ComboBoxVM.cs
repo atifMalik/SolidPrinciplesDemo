@@ -40,14 +40,16 @@ namespace Solid.SingleResponsibility.ViewModels
         {
             PropertyChanged += ComboBoxVM_PropertyChanged;
             GetAllItems();
-            Mediator.Register(this, new string[] { "ItemSelected" });
+            
+            // No need to Register, because Combobox does not need to be notified.
+            //Mediator.Register(this, new string[] { Messages.Combobox_Color_Selected });
         }
 
         void ComboBoxVM_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "SelectedColor")
             {
-                Mediator.NotifyColleagues("ComboItemSelected", _selectedColor);
+                Mediator.NotifyColleagues(Messages.Combobox_Color_Selected, _selectedColor);
 
                 //ComboBoxVM comboVM = sender as ComboBoxVM;
                 //// Set the data context explicitly on the other window
@@ -71,13 +73,8 @@ namespace Solid.SingleResponsibility.ViewModels
         /// <param name="args">Arguments for the message</param>
         public override void MessageNotification(string message, object args)
         {
-            switch (message)
-            {
-                //change the CurrentProduct to be the newly selected product
-                case "AddColorItem":
-                    AllColorItems.Add((ColorItem)args);
-                    break;
-            }
+            // This method should never be called, because is not Registered with Mediator
+            throw new NotImplementedException();
         }
 
     }

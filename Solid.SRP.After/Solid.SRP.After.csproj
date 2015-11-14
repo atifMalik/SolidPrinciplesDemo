@@ -63,6 +63,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Messages.cs" />
+    <Compile Include="MultiDictionary.cs" />
     <Compile Include="IColleague.cs" />
     <Compile Include="Mediator.cs" />
     <Compile Include="Models\ColorItem.cs" />

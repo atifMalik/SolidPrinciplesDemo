@@ -39,14 +39,14 @@ namespace Solid.SingleResponsibility.ViewModels
         {
             PropertyChanged += ListViewVM_PropertyChanged;
             GetAllItems();
-            Mediator.Register(this, new string[] { "ComboItemSelected" });
+            Mediator.Register(this, new string[] { Messages.Combobox_Color_Selected });
         }
 
         void ListViewVM_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "SelectedListBoxItem")
             {
-                Mediator.NotifyColleagues("ListBoxItemSelected", _currentListViewSelectedItem);
+                Mediator.NotifyColleagues(Messages.ListBox_Color_Selected, _currentListViewSelectedItem);
 
                 //ListViewVM listViewVM = sender as ListViewVM;
                 //// Set the data context explicitly 
@@ -70,8 +70,8 @@ namespace Solid.SingleResponsibility.ViewModels
         {
             switch (message)
             {
-                //change the CurrentProduct to be the newly selected product
-                case "ComboItemSelected":
+                // Add the Selected Color to Listbox
+                case Messages.Combobox_Color_Selected:
                     List<ColorItem> tempItems = CurrentColorItems;
                     tempItems.Add(args as ColorItem);
                     CurrentColorItems = new List<ColorItem>(tempItems);

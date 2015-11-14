@@ -5,14 +5,18 @@ using System.Text;
 
 namespace Solid.SingleResponsibility
 {
+    // Disclaimer:  *Not Original* --------------
+    // Source:      Article by Marlon from Thynk Software
+    // More Info:   https://marlongrech.wordpress.com/2008/03/20/more-than-just-mvc-for-wpf/
+
     /// <summary>
-    /// Mediator for all sub controllers
+    /// Mediator for all View Models
     /// </summary>
     public class Mediator
     {
         #region Data members
-        Dictionary<string, IColleague> internalList
-            = new Dictionary<string, IColleague>();
+        MultiDictionary<string, IColleague> internalList
+            = new MultiDictionary<string, IColleague>();
         #endregion
 
         /// <summary>
@@ -23,12 +27,11 @@ namespace Solid.SingleResponsibility
         public void Register(IColleague colleague, IEnumerable<string> messages)
         {
             foreach (string message in messages)
-                if(!internalList.ContainsKey(message))
-                    internalList.Add(message, colleague);
+                internalList.AddValue(message, colleague);
         }
 
         /// <summary>
-        /// Notify all colleagues that are registered to the specific message
+        /// Notify all colleagues that are registed to the specific message
         /// </summary>
         /// <param name="message">The message for the notify by</param>
         /// <param name="args">The arguments for the message</param>
@@ -37,7 +40,7 @@ namespace Solid.SingleResponsibility
             if (internalList.ContainsKey(message))
             {
                 //forward the message to all listeners
-                foreach (IColleague colleague in internalList.Values)
+                foreach (IColleague colleague in internalList[message])
                     colleague.MessageNotification(message, args);
             }
         }
