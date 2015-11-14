@@ -10,6 +10,9 @@ namespace Solid.SingleResponsibility.ViewModels
     {
 
         #region Data members
+        /// <summary>
+        /// Example of Singleton pattern
+        /// </summary>
         static Mediator mediatorInstance = new Mediator();
         #endregion
 
