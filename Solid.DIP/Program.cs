@@ -10,8 +10,8 @@ namespace Solid.DIP
     {
         static void Main(string[] args)
         {
-            //Before.Orchestrator_Before.RunExample();
-            After.Orchestrator_After.RunExample();
+            //Before.Driver.RunExample();
+            After.Driver.RunExample();
         }
     }
 }

@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="After_Polymorphic.cs" />
+    <Compile Include="Driver_Polymorphic.cs" />
     <Compile Include="Before.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

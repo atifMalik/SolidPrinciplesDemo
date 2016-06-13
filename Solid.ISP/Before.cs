@@ -75,7 +75,7 @@ namespace Solid.ISP.Before
         }
     }
 
-    public static class Orchestrator_Before
+    public static class Driver
     {
         public static void RunExample()
         {

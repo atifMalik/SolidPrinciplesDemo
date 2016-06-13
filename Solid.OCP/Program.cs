@@ -10,9 +10,9 @@ namespace Solid.OCP
     {
         static void Main(string[] args)
         {
-            Before.Orchestrator_Before.ShipProduct();
+            Before.Driver.ShipProduct();
 
-            //After.Orchestrator_Polymorphic.ShipProduct();
+            //After.Driver_Polymorphic.ShipProduct();
             Console.ReadLine();
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Solid.ISP.After
 {
-    public static class Orchestrator_After
+    public static class Driver
     {
         public static void RunExample()
         {

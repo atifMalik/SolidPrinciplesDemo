@@ -111,7 +111,7 @@ namespace Solid.OCP.After
         }
     }
 
-    public static class Orchestrator_Polymorphic
+    public static class Driver_Polymorphic
     {
         public static void ShipProduct()
         {

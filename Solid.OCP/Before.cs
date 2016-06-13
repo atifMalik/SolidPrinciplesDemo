@@ -9,7 +9,7 @@ namespace Solid.OCP.Before
     public enum ShippingMethod
     {
         USPS = 0,
-        Fedex,
+        FedEx,
         DHL,
         UPS,
     }
@@ -40,7 +40,7 @@ namespace Solid.OCP.Before
                 case ShippingMethod.USPS:
                     cost = 1.0 * 1;
                     break;
-                case ShippingMethod.Fedex:
+                case ShippingMethod.FedEx:
                     cost = 1.0 * 2;
                     break;
                 case ShippingMethod.DHL:
@@ -66,7 +66,7 @@ namespace Solid.OCP.Before
         }
     }
 
-    public static class Orchestrator_Before
+    public static class Driver
     {
         public static void ShipProduct()
         {
@@ -75,7 +75,7 @@ namespace Solid.OCP.Before
 
             ProductShipper shipper = new ProductShipper();
             shipper.ShipProduct(aProduct, ShippingMethod.DHL);
-            shipper.ShipProduct(anotherProduct, ShippingMethod.Fedex);
+            shipper.ShipProduct(anotherProduct, ShippingMethod.FedEx);
         }
     }
 }

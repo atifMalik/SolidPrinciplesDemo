@@ -32,7 +32,7 @@ namespace Solid.LSP.After
         }
     }
 
-    public static class Orchestrator_After
+    public static class Driver
     {
         public static void RunExample()
         {
@@ -54,7 +54,7 @@ namespace Solid.LSP.After
 
             foreach(var shape in afewShapes)
             {
-                // Have acheived Semantic equivalence, also acheived polymorphism.
+                // Have achieved Semantic equivalence, also achieved polymorphism.
                 Console.WriteLine("Area of {0} is {1}", shape.GetType().Name, shape.CalculateArea());
             }
         }

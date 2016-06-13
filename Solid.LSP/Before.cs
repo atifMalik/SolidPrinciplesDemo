@@ -42,7 +42,7 @@ namespace Solid.LSP.Before
 
     }
 
-    public static class Orchestrator_Before
+    public static class Driver
     {
         public static void RunExample()
         {
@@ -52,7 +52,7 @@ namespace Solid.LSP.Before
             // Create a Square (Child)
             Square square = new Square();
 
-            // If the following line compiles, we have acheived Syntactic equivalence
+            // If the following line compiles, we have achieved Syntactic equivalence
             rectangle = square;     // It does compile
 
             // The lack of Substitutability:

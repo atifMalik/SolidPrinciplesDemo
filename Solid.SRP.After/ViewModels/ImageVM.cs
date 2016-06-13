@@ -21,7 +21,7 @@ namespace Solid.SingleResponsibility.ViewModels
 
         public ImageVM()
         {
-            Mediator.Register(this, new string[] { Messages.ListBox_Color_Selected });
+            Mediator.Register(this, new string[] { Messages.ListBox_Color_Selected, Messages.Combobox_Color_Selected });
         }
 
         /// <summary>
@@ -35,6 +35,7 @@ namespace Solid.SingleResponsibility.ViewModels
             {
                 // Change the Image to correspond with Selected Color
                 case Messages.ListBox_Color_Selected:
+                case Messages.Combobox_Color_Selected:
                    CurrentItem = (ColorItem)args;
                     break;
             }

@@ -26,14 +26,13 @@ namespace Solid.DIP.After
     public class Customer
     {
         public string Name { get; set; }
-        public CustomerNotificationPreference NotificationMethod { get; set; }
     }
 
-    public enum CustomerNotificationPreference
-    {
-        Email = 0,
-        Text
-    }
+    //public enum CustomerNotificationPreference
+    //{
+    //    Email = 0,
+    //    Text
+    //}
 
     public static class MockModel
     {
@@ -60,7 +59,7 @@ namespace Solid.DIP.After
             {
                 if (_currentCustomer == null)
                 {
-                    _currentCustomer = new Customer() { Name = "Atif Malik", NotificationMethod = CustomerNotificationPreference.Email };
+                    _currentCustomer = new Customer() { Name = "Atif Malik" };
                 }
                 return _currentCustomer;
             }

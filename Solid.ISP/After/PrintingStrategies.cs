@@ -6,26 +6,37 @@ namespace Solid.ISP.After
     public interface IPrintMedium
     {
         void Print(string output);
+        TextWriter OutputChannel { get; }
     }
 
     public class ConsolePrinter : IPrintMedium
     {
-        private TextWriter outputChannel = Console.Out;
+        public TextWriter OutputChannel
+        {
+            get { return Console.Out; }
+        }
+
         public void Print(string output)
         {
-            outputChannel.WriteLine(output);
+            OutputChannel.WriteLine(output);
         }
     }
 
     public class FilePrinter : IPrintMedium
     {
-        private StreamWriter outputChannel;
+        private TextWriter _outputChannel;
+
+        public TextWriter OutputChannel
+        {
+            get { return _outputChannel; }
+            set { _outputChannel = value;}
+        }
 
         public void Print(string output)
         {
-            using (outputChannel = new StreamWriter(@"ISP_Output.txt"))
+            using (OutputChannel = new StreamWriter(@"ISP_Output.txt"))
             {
-                outputChannel.WriteLine(output);
+                OutputChannel.WriteLine(output);
             }
         }
     }

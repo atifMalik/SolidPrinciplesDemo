@@ -45,11 +45,11 @@
   <ItemGroup>
     <Compile Include="After\Model.cs" />
     <Compile Include="After\Notifications.cs" />
-    <Compile Include="After\Orchestrator_After.cs" />
+    <Compile Include="After\Driver.cs" />
     <Compile Include="After\Repositories.cs" />
     <Compile Include="After\StockMessageFactory.cs" />
     <Compile Include="After\StockManager.cs" />
-    <Compile Include="Before\Orchestrator_Before.cs" />
+    <Compile Include="Before\Driver.cs" />
     <Compile Include="Before\Repositories.cs" />
     <Compile Include="Before\StockWatcher.cs" />
     <Compile Include="Before\Model.cs" />

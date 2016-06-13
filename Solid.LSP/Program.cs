@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Solid.LSP.Before
+namespace Solid.LSP
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Before.Orchestrator_Before.RunExample();
-            After.Orchestrator_After.RunExample();
+            //Before.Driver.RunExample();
+            After.Driver.RunExample();
 
             Console.ReadLine();
         }

@@ -10,9 +10,10 @@ namespace Solid.ISP
     {
         static void Main(string[] args)
         {
-            Before.Orchestrator_Before.RunExample();
+            //Before.Driver.RunExample();
 
-            After.Orchestrator_After.RunExample();
+            After.Driver.RunExample();
+
             Console.ReadLine();
         }
     }
