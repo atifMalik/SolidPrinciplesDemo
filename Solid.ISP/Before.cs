@@ -80,7 +80,7 @@ namespace Solid.ISP.Before
         public static void RunExample()
         {
             Product firstProduct = new Product() { Name = "Bose Portable Speakers", Price = 100 };
-            Product secondProduct = new Product() { Name = "Being and Nothingness by Jean-Paul Sartre", Price = 35 };
+            Product secondProduct = new Product() { Name = "C# in Depth by Jon Skeet", Price = 35 };
             Product thirdProduct = new Product() { Name = "Head First Design Patterns by Eric Freeman", Price = 50 };
 
             var productsInOrder = new List<Product> { firstProduct, secondProduct, thirdProduct };
