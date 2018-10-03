@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  pageTitle: string = 'Test App';
+  pageTitle: string = 'Single Responsibilty Principle, Angular Version';
 }
