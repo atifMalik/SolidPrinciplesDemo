@@ -1,11 +1,12 @@
 import { Component } from "@angular/core";
 
-@
-  Component({
+@Component({
     selector: 'mn-ColorCombo',
     templateUrl: '../Views/ColorComboBox.component.html'
-  })
+})
+
 export class ColorComboBoxVM {
+  selectedColor: any = 'Some Color';
   colorItems: any[] = [
     {
       "text": "Black"
@@ -20,4 +21,8 @@ export class ColorComboBoxVM {
       "text": "Green"
     }
   ];
+
+  selectColor(color) : void {
+    this.selectedColor = color;
+  }
 }
