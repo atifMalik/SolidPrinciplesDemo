@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
 })
 
 export class ColorComboBoxVM {
-  selectedColor: any = 'Some Color';
+  selectedColor: string = 'Some Color';
   colorItems: any[] = [
     {
       "text": "Black"
