@@ -9,7 +9,7 @@ export class Mediator {
   private internalList: MultiDictionary<string, IColleague> = new MultiDictionary<string, IColleague>();
 
   // Registers a Colleague to a specific message
-  register(colleague: IColleague, messages: string[]): void {
+  public register(colleague: IColleague, messages: string[]): void {
 
     for (let message of messages) {
       this.internalList.addValue(message, colleague);
@@ -17,7 +17,7 @@ export class Mediator {
   }
 
   // Notify all colleagues that are registed to the specific message
-  notifyColleagues(message: string, args: object): void {
+  public notifyColleagues(message: string, args: object): void {
     if (this.internalList.containsKey(message)) {
 
       //forward the message to all listeners

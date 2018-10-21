@@ -9,12 +9,14 @@ import { Mediator } from "@app/Mediator";
 
 export class ColorComboBoxVM extends BaseVM {
 
-  public messageNotification(message: string, args: object) {
-        throw new Error("Method not implemented.");
+  constructor() {
+    super();
+
+    // this.mediator.register(this, ['one', 'two']);
   }
 
-    selectedColor: string = 'Some Color';
-    colorItems: any[] = [
+  selectedColor: string = 'Some Color';
+  colorItems: any[] = [
     {
       "text": "Black"
     },
@@ -31,5 +33,9 @@ export class ColorComboBoxVM extends BaseVM {
 
   selectColor(color) : void {
     this.selectedColor = color;
+  }
+
+  public messageNotification(message: string, args: object) {
+    throw new Error("Method not implemented.");
   }
 }
