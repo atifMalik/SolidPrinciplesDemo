@@ -1,40 +1,6 @@
-
-class List<T> {
-  private items: T[] = [];
-
-  public add(value: T): this {
-    this.items.push(value);
-    return this;
-  }
-
-  public count() : number {
-    return this.items.length;
-  }
-
-  public remove(value: T): this {
-    let index = -1;
-    while (this.items
-      && this.items.length > 0
-      && (index = this.items.indexOf(value)) > -1) {
-      this.items.splice(index, 1);
-    }
-    return this;
-  }
-
-  public toString(): string {
-    return this.items.toString();
-  }
-}
-
-interface IDictionary<TK, TV> {
-  addValue(key: TK, newItem: TV): void;
-  addValues(key: TK, newItems: TV[]): void;
-  removeValue(key: TK, value: TV): boolean;
-}
-
 export class MultiDictionary<K extends string, V> implements IDictionary<K, V> {
 
-  private internalMap: Map<K, List<V>>;
+  private internalMap: Map<K, Array<V>>;
 
   constructor() {
     this.internalMap = new Map();
@@ -43,11 +9,26 @@ export class MultiDictionary<K extends string, V> implements IDictionary<K, V> {
   private ensureKey(key: K): void {
 
     if (!this.internalMap.has(key)) {
-      this.internalMap.set(key, new List<V>());
+      this.internalMap.set(key, new Array<V>());
     }
     else {
       if (this.internalMap.get(key) == null)
-        this.internalMap.set(key, new List<V>());
+        this.internalMap.set(key, new Array<V>());
+    }
+  }
+
+  getValue(key: K): Array<V> {
+
+    let returnArray: Array<V> = new Array<V>();
+
+    if (this.internalMap.has(key)) {
+
+      var list = this.internalMap.get(key);
+
+      if (list != null)
+        return list;
+      else
+        return returnArray;
     }
   }
 
@@ -55,7 +36,7 @@ export class MultiDictionary<K extends string, V> implements IDictionary<K, V> {
     this.ensureKey(key);
 
     var list = this.internalMap.get(key);
-    list.add(newItem);
+    list.push(newItem);
 
     this.internalMap.set(key, list);
   }
@@ -66,23 +47,43 @@ export class MultiDictionary<K extends string, V> implements IDictionary<K, V> {
     var list = this.internalMap.get(key);
 
     for (let item of newItems) {
-      list.add(item);
+      list.push(item);
     }
 
     this.internalMap.set(key, list);
   }
 
   removeValue(key: K, value: V): boolean {
+
     if (!this.internalMap.has(key))
       return false;
 
     var list = this.internalMap.get(key);
 
-    list = list.remove(value);
+    const index: number = list.indexOf(value);
 
-    if (list.count() === 0)
+    if (index !== -1) {
+      list.splice(index, 1);
+    }
+
+    if (list.length === 0)
       this.internalMap.delete(key);
+    else
+      this.internalMap.set(key, list);
 
     return true;
   }
+
+  containsKey(key: K): boolean {
+    return this.internalMap.has(key);
+  }
+}
+
+
+interface IDictionary<TK, TV> {
+  getValue(key: TK): Array<TV>;
+  addValue(key: TK, newItem: TV): void;
+  addValues(key: TK, newItems: TV[]): void;
+  removeValue(key: TK, value: TV): boolean;
+  containsKey(key: TK) : boolean;
 }
