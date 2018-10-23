@@ -5,11 +5,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { ColorComboBoxVM } from './ViewModels/ColorComboBox.component';
+import { ColorListViewVM } from './ViewModels/ColorListView.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ColorComboBoxVM
+    ColorComboBoxVM,
+    ColorListViewVM
   ],
   imports: [
     BrowserModule, NgbModule.forRoot(), FormsModule

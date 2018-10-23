@@ -6,7 +6,6 @@ import { Mediator } from "@app/Mediator";
     selector: 'mn-ColorCombo',
     templateUrl: '../Views/ColorComboBox.component.html'
 })
-
 export class ColorComboBoxVM extends BaseVM {
 
   constructor() {
@@ -18,16 +17,16 @@ export class ColorComboBoxVM extends BaseVM {
   selectedColor: string = 'Some Color';
   colorItems: any[] = [
     {
-      "text": "Black"
-    },
-    {
-      "text": "Blue"
-    },
-    {
       "text": "Red"
     },
     {
       "text": "Green"
+    },
+    {
+      "text": "Black"
+    },
+    {
+      "text": "White"
     }
   ];
 

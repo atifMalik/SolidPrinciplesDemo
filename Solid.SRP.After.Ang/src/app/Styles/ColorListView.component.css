@@ -1,0 +1,17 @@
+
+.mainDiv {
+  width: 200px;
+  padding: 2px;
+  margin: 4px;
+}
+
+ul, style {
+  list-style: none;
+}
+
+.colorDiv {
+  text-align: center;
+  margin: 2px;
+  padding: 5px;
+  height: 35px;
+}
