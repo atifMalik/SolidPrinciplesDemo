@@ -1,3 +1,4 @@
+
 export interface IColorItem {
   text: string;
   backgroundColor: string;
