@@ -47,8 +47,11 @@ export class ColorListViewVM extends BaseVM {
   foreColor: string = 'Black';
 
   messageNotification(message: string, args: object) {
-    if (message === Messages.Combobox_Color_Selected) {
-      this.colorItems.push(args as IColorItem);
+    switch (message) {
+      case Messages.Combobox_Color_Selected:
+        this.colorItems.push(args as IColorItem);
+
+      //default:
     }
   }
 }
