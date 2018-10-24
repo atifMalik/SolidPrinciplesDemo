@@ -1,6 +1,9 @@
 import { Component } from "@angular/core";
 import { BaseVM } from "@app/ViewModels/BaseVM"
 import { Mediator } from "@app/Mediator";
+import { Messages } from "@app/Messages";
+import { IColorItem } from "@app/Models/ColorItem";
+
 
 @Component({
   selector: 'mn-ColorListView',
@@ -10,30 +13,33 @@ import { Mediator } from "@app/Mediator";
 export class ColorListViewVM extends BaseVM {
   constructor() {
     super();
-
-    // this.mediator.register(this, ['one', 'two']);
+    this.mediator.register(this, [ Messages.Combobox_Color_Selected ] );
   }
 
-  colorItems: any[] = [
+  colorItems: IColorItem[] = [
     {
-      backColor: 'Red',
-      foreColor: 'Black',
-      text: 'Red'
+      text: 'Red',
+      backgroundColor: 'Red',
+      foregroundColor: 'Black',
+      image: ''
     },
     {
-      backColor: 'Green',
-      foreColor: 'Black',
-      text: 'Green'
+      text: 'Green',
+      backgroundColor: 'Green',
+      foregroundColor: 'Black',
+      image: ''
     },
     {
-      backColor: 'Black',
-      foreColor: 'White',
-      text: 'Black'
+      text: 'Black',
+      backgroundColor: 'Black',
+      foregroundColor: 'White',
+      image: ''
     },
     {
-      backColor: 'White',
-      foreColor: 'Black',
-      text: 'White'
+      text: 'White',
+      backgroundColor: 'White',
+      foregroundColor: 'Black',
+      image: ''
     }
   ];
 
@@ -41,6 +47,8 @@ export class ColorListViewVM extends BaseVM {
   foreColor: string = 'Black';
 
   messageNotification(message: string, args: object) {
-
+    if (message === Messages.Combobox_Color_Selected) {
+      this.colorItems.push(args as IColorItem);
+    }
   }
 }

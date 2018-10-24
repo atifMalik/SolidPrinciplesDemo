@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { BaseVM } from "@app/ViewModels/BaseVM"
 import { Mediator } from "@app/Mediator";
+import { Messages } from "@app/Messages";
+import { IColorItem } from "@app/Models/ColorItem";
 
 @Component({
     selector: 'mn-ColorCombo',
@@ -15,23 +17,36 @@ export class ColorComboBoxVM extends BaseVM {
   }
 
   selectedColor: string = 'Some Color';
-  colorItems: any[] = [
+  colorItems: IColorItem[] = [
     {
-      "text": "Red"
+      text: 'Red',
+      backgroundColor: 'Red',
+      foregroundColor: 'Black',
+      image: ''
     },
     {
-      "text": "Green"
+      text: 'Green',
+      backgroundColor: 'Green',
+      foregroundColor: 'Black',
+      image: ''
     },
     {
-      "text": "Black"
+      text: 'Black',
+      backgroundColor: 'Black',
+      foregroundColor: 'White',
+      image: ''
     },
     {
-      "text": "White"
+      text: 'White',
+      backgroundColor: 'White',
+      foregroundColor: 'Black',
+      image: ''
     }
   ];
 
-  selectColor(color) : void {
-    this.selectedColor = color;
+  selectColor(colorItem) : void {
+    this.selectedColor = colorItem.text;
+    this.mediator.notifyColleagues(Messages.Combobox_Color_Selected, colorItem);
   }
 
   public messageNotification(message: string, args: object) {

@@ -1,7 +1,7 @@
 <div class="mainDiv">
   <ul list-style='none'>
     <li *ngFor='let citem of colorItems'>
-      <div class="colorDiv" [style.backgroundColor]='citem.backColor' [style.color]='citem.foreColor'>
+      <div class="colorDiv" [style.backgroundColor]='citem.backgroundColor' [style.color]='citem.foregroundColor'>
         {{citem.text}}
       </div>
     </li>
