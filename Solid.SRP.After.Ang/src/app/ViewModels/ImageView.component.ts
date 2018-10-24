@@ -12,8 +12,8 @@ import { IColorItem } from "@app/Models/ColorItem";
 export class ImageViewVM extends BaseVM {
   constructor() {
     super();
-    this.currentColorItem = { image: ''} as IColorItem;
-    this.mediator.register(this, [ Messages.ListBox_Color_Selected ] );
+    this.currentColorItem = { image: '' } as IColorItem;
+    this.mediator.register(this, [Messages.Combobox_Color_Selected, Messages.ListBox_Color_Selected]);
   }
 
   currentColorItem: IColorItem;
@@ -21,6 +21,7 @@ export class ImageViewVM extends BaseVM {
   messageNotification(message: string, args: object) {
     switch (message) {
       case Messages.ListBox_Color_Selected:
+      case Messages.Combobox_Color_Selected:
         this.currentColorItem = args as IColorItem;
 
       //default:
