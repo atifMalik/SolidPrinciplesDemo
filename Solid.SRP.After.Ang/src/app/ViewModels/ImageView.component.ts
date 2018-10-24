@@ -12,7 +12,7 @@ import { IColorItem } from "@app/Models/ColorItem";
 export class ImageViewVM extends BaseVM {
   constructor() {
     super();
-    this.currentColorItem = {} as IColorItem;
+    this.currentColorItem = { image: ''} as IColorItem;
     this.mediator.register(this, [ Messages.ListBox_Color_Selected ] );
   }
 

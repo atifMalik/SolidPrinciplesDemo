@@ -1,6 +1,10 @@
 <div class="mainDiv">
   <div><span>{{currentColorItem.text}}</span></div>
   <div>
-    <img [src]='currentColorItem.image' />
+    <img [src]='currentColorItem.image'
+         [title]='currentColorItem.text'
+         [style.width.px]='600'
+         [style.height.px]='400'
+         />
   </div>
 </div>
