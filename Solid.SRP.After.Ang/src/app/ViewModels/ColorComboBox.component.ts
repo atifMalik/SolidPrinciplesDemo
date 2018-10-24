@@ -2,16 +2,17 @@ import { Component } from "@angular/core";
 import { BaseVM } from "@app/ViewModels/BaseVM"
 import { Messages } from "@app/Messages";
 import { IColorItem } from "@app/Models/ColorItem";
+import { ColorItemsService } from "@app/Models/ColorItems.service";
 
 @Component({
-    selector: 'mn-ColorCombo',
-    templateUrl: '../Views/ColorComboBox.component.html'
+  selector: 'mn-ColorCombo',
+  templateUrl: '../Views/ColorComboBox.component.html',
+  providers: [ColorItemsService]
 })
 export class ColorComboBoxVM extends BaseVM {
 
-  constructor() {
+  constructor(private colorsService: ColorItemsService) {
     super();
-
     // this.mediator.register(this, ['one', 'two']);
   }
 
@@ -43,7 +44,7 @@ export class ColorComboBoxVM extends BaseVM {
     }
   ];
 
-  selectColor(colorItem) : void {
+  selectColor(colorItem): void {
     this.selectedColor = colorItem.text;
     this.mediator.notifyColleagues(Messages.Combobox_Color_Selected, colorItem);
   }
