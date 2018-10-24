@@ -20,7 +20,7 @@ export class ColorComboBoxVM extends BaseVM {
 
   colorItems: IColorItem[];
 
-  selectColor(colorItem): void {
+  colorSelected(colorItem): void {
     this.mediator.notifyColleagues(Messages.Combobox_Color_Selected, colorItem);
   }
 

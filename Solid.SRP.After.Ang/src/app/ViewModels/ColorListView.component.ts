@@ -18,7 +18,7 @@ export class ColorListViewVM extends BaseVM {
 
   colorItems: IColorItem[];
 
-  selectColor(colorItem): void {
+  colorSelected(colorItem): void {
     this.mediator.notifyColleagues(Messages.ListBox_Color_Selected, colorItem);
   }
 

@@ -6,7 +6,7 @@
       </button>
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
         <div *ngFor='let citem of colorItems'>
-          <button (click)='selectColor(citem)' class="dropdown-item">{{citem.text}}</button>
+          <button (click)='colorSelected(citem)' class="dropdown-item">{{citem.text}}</button>
         </div>
       </div>
     </div>

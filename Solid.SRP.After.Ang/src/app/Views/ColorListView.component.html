@@ -1,6 +1,6 @@
 <div class="mainDiv">
   <ul list-style='none'>
-    <li *ngFor='let citem of colorItems' (click)="selectColor(citem)">
+    <li *ngFor='let citem of colorItems' (click)="colorSelected(citem)">
       <div class="colorDiv" [style.backgroundColor]='citem.backgroundColor' [style.color]='citem.foregroundColor'>
         {{citem.text}}
       </div>

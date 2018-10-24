@@ -5,11 +5,11 @@ import { IColorItem } from "@app/Models/ColorItem";
 
 
 @Component({
-  selector: 'mn-ImageListView',
+  selector: 'mn-ImageView',
   templateUrl: '../Views/ImageView.component.html'
   //styleUrls: ['../Styles/ColorListView.component.css']
 })
-export class ImageViewVM extends BaseVM {
+export class ImageVM extends BaseVM {
   constructor() {
     super();
     this.currentColorItem = { image: '' } as IColorItem;
