@@ -18,11 +18,9 @@ export class ColorComboBoxVM extends BaseVM {
     // this.mediator.register(this, ['one', 'two']);
   }
 
-  selectedColor: string = 'Some Color';
   colorItems: IColorItem[];
 
   selectColor(colorItem): void {
-    this.selectedColor = colorItem.text;
     this.mediator.notifyColleagues(Messages.Combobox_Color_Selected, colorItem);
   }
 

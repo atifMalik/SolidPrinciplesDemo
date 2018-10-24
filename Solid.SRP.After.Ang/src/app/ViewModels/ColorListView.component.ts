@@ -18,6 +18,10 @@ export class ColorListViewVM extends BaseVM {
 
   colorItems: IColorItem[];
 
+  selectColor(colorItem): void {
+    this.mediator.notifyColleagues(Messages.ListBox_Color_Selected, colorItem);
+  }
+
   messageNotification(message: string, args: object) {
     switch (message) {
       case Messages.Combobox_Color_Selected:
