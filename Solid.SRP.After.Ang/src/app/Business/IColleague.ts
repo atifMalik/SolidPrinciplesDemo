@@ -1,4 +1,4 @@
-import { Mediator } from "@app/Mediator";
+import { Mediator } from "@app/Business/Mediator";
 
 export interface IColleague {
   mediator: Mediator;

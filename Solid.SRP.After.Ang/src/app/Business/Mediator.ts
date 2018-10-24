@@ -2,8 +2,8 @@
 /// Mediator for all View Models
 /// </summary>
 
-import { MultiDictionary } from "@app/MultiDictionary";
-import { IColleague } from "@app/IColleague";
+import { MultiDictionary } from "@app/Business/MultiDictionary";
+import { IColleague } from "@app/Business/IColleague";
 
 export class Mediator {
   private internalList: MultiDictionary<string, IColleague> = new MultiDictionary<string, IColleague>();

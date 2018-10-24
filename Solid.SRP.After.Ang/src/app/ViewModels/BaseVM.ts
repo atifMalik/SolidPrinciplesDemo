@@ -1,5 +1,5 @@
-import { IColleague } from "@app/IColleague";
-import { Mediator } from "@app/Mediator";
+import { IColleague } from "@app/Business/IColleague";
+import { Mediator } from "@app/Business/Mediator";
 
 export abstract class BaseVM implements IColleague
 {

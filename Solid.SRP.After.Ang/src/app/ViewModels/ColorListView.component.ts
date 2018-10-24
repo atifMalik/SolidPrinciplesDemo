@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { BaseVM } from "@app/ViewModels/BaseVM"
-import { Messages } from "@app/Messages";
+import { Messages } from "@app/Business/Messages";
 import { IColorItem } from "@app/Models/ColorItem";
 
 
