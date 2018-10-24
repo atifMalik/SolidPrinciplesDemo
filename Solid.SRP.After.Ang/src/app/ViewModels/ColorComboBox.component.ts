@@ -13,36 +13,13 @@ export class ColorComboBoxVM extends BaseVM {
 
   constructor(private colorsService: ColorItemsService) {
     super();
+    this.colorItems = colorsService.getAllItems();
+
     // this.mediator.register(this, ['one', 'two']);
   }
 
   selectedColor: string = 'Some Color';
-  colorItems: IColorItem[] = [
-    {
-      text: 'Red',
-      backgroundColor: 'Red',
-      foregroundColor: 'Black',
-      image: ''
-    },
-    {
-      text: 'Green',
-      backgroundColor: 'Green',
-      foregroundColor: 'Black',
-      image: ''
-    },
-    {
-      text: 'Black',
-      backgroundColor: 'Black',
-      foregroundColor: 'White',
-      image: ''
-    },
-    {
-      text: 'White',
-      backgroundColor: 'White',
-      foregroundColor: 'Black',
-      image: ''
-    }
-  ];
+  colorItems: IColorItem[];
 
   selectColor(colorItem): void {
     this.selectedColor = colorItem.text;
