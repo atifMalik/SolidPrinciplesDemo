@@ -3,7 +3,7 @@
 ### This project is the AngularJS version of Solid.SRP.After (WPF) project.
 
 ### Technologies Used
----
+
 1. Visual Studio Community 2017,
 2. AngularJS,
 3. Angular CLI, version 6.0.8: used to create, test, and build the AngularJS app,
@@ -12,13 +12,13 @@
 	* NG Bootstrap was used only in App Component's Template (app.component.html) for minimal, responsive styling.
 
 ### Usage
----
+
 * *Source Code is available in __'/src/app'__ folder*,
 * *The AngularJS application was pre-compiled in PROD mode, using the '--base-href' flag*, therefore the folder '__/dist/Solid.SRP.After.Ang__' can be directly downloaded to hard drive, and the webpage '__*index.html*__' can be opened in any browser to view the working application.
 
 
 ### Project Details
----
+
 __'src/app' folder contains all source code for the AngularJS application. The sub-folders are described below.__
 
 * *__/Business__ folder contains all business classes and interfaces (e.g. Mediator, IColleague, etc.), implemented in TypeScript, to be used from AngularJS components,*
@@ -31,8 +31,3 @@ __'src/app' folder contains all source code for the AngularJS application. The s
     * *__App Component's Template__ (app.component.html) uses Angular directives to arrange the three __Views__ defined in __/Views__ folder (above); each of these directives is defined in the __'selector'__ property on the __'@Component()'__ attribute for each of the three Angular Components (__ViewModels__),*
 	* *__App Component's Template__ uses __Bootstrap__ class attributes for responsive CSS styling.*
 * *__/app__ (__root__) folder also contains the definition for the only __Angular Module__ (__AppModule__) used in the application, defined in 'app.module.ts.'*
-
-
-
-
-
