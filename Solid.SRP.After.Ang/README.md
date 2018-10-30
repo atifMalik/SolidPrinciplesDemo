@@ -1,5 +1,6 @@
 # Solid.SRP.After.Ang
-## This project is the AngularJS version of Solid.SRP.After (WPF) project.
+
+### This project is the AngularJS version of Solid.SRP.After (WPF) project.
 
 ## Technologies Used
 1. Visual Studio Community 2017,
