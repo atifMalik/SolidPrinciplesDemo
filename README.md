@@ -1,6 +1,6 @@
 # SolidPrinciplesDemo
 
-### Update on 10/30/2018:
+#### Update on 10/30/2018:
 
 Added the __AngularJS__ version of Project "__Solid.SRP.After__." Please view the project page [Solid.SRP.After.Ang](Solid.SRP.After.Ang/), for detailed description of the project.
 
